@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: karangalanibflcicd 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: karangalanibflcicd
+  template:
+    metadata:
+      labels:
+        app: karangalanibflcicd 
+    spec:
+      containers:
+        - name: karangalanibflcicd 
+          image: bfltraininh.azurecr.io/karangalanibflcicd
+          ports:
+          - containerPort: 80
