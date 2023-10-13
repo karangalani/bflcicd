@@ -28,8 +28,8 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      vmImage: $(vmImageName)
+    pool: BFS-mypc
+      #vmImage: $(vmImageName)
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
@@ -51,8 +51,8 @@ stages:
   jobs:
   - deployment: Deploy
     displayName: Deploy
-    pool:
-      vmImage: $(vmImageName)
+    pool: BFS-mypc
+      #vmImage: $(vmImageName)
     environment: 'karangalanibflcicd.default'
     strategy:
       runOnce:
